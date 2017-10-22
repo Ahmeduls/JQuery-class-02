@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <meta name="author" content="G.M.Mostakim Billah Rasel">
+
+    <title>JQuery</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    .all-img {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    
+    .red {
+        background: red;
+        border: 1px solid red;
+        padding: 4px 10px;
+        margin: 0px 5px;
+        color: black;
+        font-weight: bold;
+        border-radius: 15px;
+    }
+    
+    .orange {
+        background: orange;
+        border: 1px solid red;
+        padding: 4px 10px;
+        margin: 0px 5px;
+        color: black;
+        font-weight: bold;
+        border-radius: 15px;
+    }
+    
+    .green {
+        background: green;
+        border: 1px solid red;
+        padding: 4px 10px;
+        margin: 0px 5px;
+        color: black;
+        font-weight: bold;
+        border-radius: 15px;
+    }
+
+</style>
+
+<!-- Start Image Gallery-->
+
+<body>
+
+
+    <!-- jQuery Main File -->
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center well well-sm text-danger">Well Come to JQuery</h1>
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" id="popup">Facebook</button>
+                    <button type="button" class="btn btn-success" id="all-images">All Images</button>
+                    <button type="button" class="btn btn-danger" id="all-hide">Hide</button>
+                    <button type="button" class="btn btn-danger" id="all-interior">Interior Design</button>
+                    <button type="button" class="btn btn-info" id="all-web-design">Web Design</button>
+                    <button type="button" class="btn btn-info" id="all-web-development">Web Development</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-gallery" style="margin-top: 30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 ">
+                    <div class="all-interior ">
+                        <img src="img/01.jpg" class="all-img" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="all-web-design ">
+                        <img src="img/02.jpg" class="all-img" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="all-web-development ">
+                        <img src="img/03.jpg" class="all-img" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="all-web-design">
+                        <img src="img/04.jpg" class="all-img" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="all-interior">
+                        <img src="img/05.jpg" class="all-img" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="all-web-design">
+                        <img src="img/06.jpg" class="all-img" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="all-web-development">
+                        <img src="img/07.jpg" class="all-img" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="all-web-development">
+                        <img src="img/08.jpg" class="all-img" alt="">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#popup').click(function() {
+                window.open("https://www.facebook.com", "target=_blank",);
+            });
+            $("#all-hide").click(function() {
+                $(".all-interior").fadeOut(2000);
+                $(".all-web-development").fadeOut(2000);
+                $(".all-web-design").fadeOut(2000);
+            });
+            $("#all-images").click(function() {
+                $(".all-interior").fadeIn(2000);
+                $(".all-web-development").fadeIn(2000);
+                $(".all-web-design").fadeIn(2000);
+            });
+            $("#all-interior").click(function() {
+                $(".all-interior").fadeIn(2000);
+                $(".all-web-development").fadeOut(2000);
+                $(".all-web-design").fadeOut(2000);
+            });
+            $("#all-web-design").click(function() {
+                $(".all-interior").fadeOut(2000);
+                $(".all-web-development").fadeOut(2000);
+                $(".all-web-design").fadeIn(2000);
+            });
+            $("#all-web-development").click(function() {
+                $(".all-interior").fadeOut(2000);
+                $(".all-web-development").fadeIn(2000);
+                $(".all-web-design").fadeOut(2000);
+            });
+        });
+
+    </script>
+    <!-- End Image Gallery-->
+
+    <!--    Keyup || Key Down-->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                <h3 style="color : red; font-weight: 700">Keyup || Keydown</h3><br>
+                <form action="">
+                    <div class="form-group">
+                        <label for="fullname">Name</label>
+                        <input type="text" name="fullname" id="name" placeholder="Type Your Full Name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Type Your Password" class="form-control">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--    Keyup || keydown-->
+
+    <script>
+        $(document).ready(function() {
+            $('#name').keyup(function() {
+                alert("Keyup");
+            });
+            $('#password').keydown(function() {
+                alert("keydown");
+            });
+        });
+
+    </script>
+
+    <!--    Start Password Strength Checker-->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                <h3 style="color : red; font-weight: 700">Password Strength Checker</h3><br>
+                <form action="">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password_data" placeholder="Type Your Password" class="form-control"><br>
+                        <span class="password_strenght"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#password_data").keyup(function() {
+                var password = $(this).val().length;
+                if (password < 1) {
+                    $(".password_strenght").text("");
+                    $(".password_strenght").removeClass("red");
+                    $(".password_strenght").removeClass("green");
+                    $(".password_strenght").removeClass("orange");
+                } else if (password < 6) {
+                    $(".password_strenght").text("Your Password is Week");
+                    $(".password_strenght").addClass("red");
+                    $(".password_strenght").removeClass("green");
+                    $(".password_strenght").removeClass("orange");
+                } else if (password <= 10) {
+                    $(".password_strenght").text("Your Password is Good");
+                    $(".password_strenght").removeClass("red");
+                    $(".password_strenght").removeClass("green");
+                    $(".password_strenght").addClass("orange");
+                } else {
+                    $(".password_strenght").text("Your Password is Strong");
+                    $(".password_strenght").removeClass("red");
+                    $(".password_strenght").addClass("green");
+                    $(".password_strenght").removeClass("orange");
+                }
+            });
+        });
+
+    </script>
+    <!--    End Password Strength Checker-->
+
+    <!-- Start Dynamically Change Body Background Color with JQuery-->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                <h3 style="color : red;">Start Dynamically Change Body Background Color with JQuery</h3><br>
+                <form action="">
+                    <div class="form-group">
+                        <select name="" id="bgcolor" class="form-control">
+                        <option value="white">White</option>
+                        <option value="black">Black</option>
+                        <option value="orange">Orange</option>
+                        <option value="darkgreen">Darkgreen</option>
+                        <option value="red">Red</option>
+                        <option value="maroon">Maroon</option>
+                    </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var color = $("#bgcolor").val();
+            $("body").css("background", color);
+
+            $("#bgcolor").change(function() {
+                var color = $("#bgcolor").val();
+                $("body").css("background", color);
+            });
+        });
+
+    </script>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                <h3 style="color : red;">Bind & Unbind Button</h3><br>
+                <button id="bind_btn" class="btn btn-primary">Start Bind</button>
+                <button id="unbind_btn" class="btn btn-primary">Start Unbind</button>
+                <div class="binding_data" style="margin-bottom: 30px; background: red;color: white;margin: 20px 0px; font-weight: 700;"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#bind_btn").click(function() {
+                $(".binding_data").text("This text will be hide when you mouseover");
+                $(".binding_data").bind("mouseover", function() {
+                    $(this).hide(3000);
+                });
+
+                $("#unbind_btn").click(function() {
+                    $(".binding_data").text("This text will be hide when you mouseover");
+                    $(".binding_data").unbind("mouseover");
+
+                });
+            });
+
+        });
+
+    </script>
+<!--    Counting Character Remaining on Textarea -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                <h3 style="color : red;">Counting Character Remaining on Textarea </h3><br>
+                <span style="padding-bottom: 10px;">Text Area</span>
+                <textarea name="" id="character_count" cols="40" rows="10"></textarea>
+                <p style="font-size: 15px;" class="character_remaining"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        var max_character = 200;
+        $(".character_remaining").text("You have remain " + max_character + " character.");
+        $("#character_count").keyup(function() {
+            var character_total = $(this).val().length;
+            var remaining_char = max_character - character_total;
+            $(".character_remaining").text("You have remain " + remaining_char + " character");
+        });
+    });
+
+</script>
+
+<!--JQuery slidedown | slideup |slidetoggle-->
+
+ <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 style="color : red;">JQuery slidedown | slideup |slidetoggle </h3><br>
+                <button id="slide_up" class="btn btn-info">Slide Up</button>
+                <button id="slide_down" class="btn btn-primary">Slide Down</button>
+                <button id="slide_toggle" class="btn btn-success">Slide Toggle</button>
+                 <div class="slide" style="height: 200px;border: 2px solid red;margin: 20px 0px;text-align: center">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aperiam explicabo quibusdam consequatur, nostrum, omnis hic culpa repellat voluptatibus sapiente consequuntur, ab illo. Necessitatibus porro quod, excepturi pariatur quia voluptate consectetur, ratione ipsa dolores velit, ullam facere. Quasi enim beatae mollitia minima tempore eaque dicta repudiandae maxime quas doloribus? Quod animi nobis aliquid, harum optio odio. Odit obcaecati aperiam a fuga ad sequi officia numquam modi. Non itaque, id laborum officia fugit deleniti sapiente quis impedit debitis, nostrum saepe tempora maiores totam consequatur dolore molestiae amos accusamus, esse voluptatibus inventore magnam ipsam nobis! Officiis id voluptatem enim rerum rem vel dolor accusamus modi asperiores vero sapiente, consequuntur eaque iure voluptates laborum quae ad porro, repellendus. Non expedita, amet reiciendis. Voluptatum eligendi distinctio recusandae rerum porro vitae quisquam ullam, eum, laborum soluta dignissimos perferendis temporibus minima quas itaque esse aspernatur ab officia.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quasi cum placeat aperiam, accusamus molestias corrupti quaerat velit commodi aliquid.</p>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("#slide_up").click(function(){
+               $(".slide").slideUp(3000); 
+            }); 
+            $("#slide_down").click(function(){
+               $(".slide").slideDown(3000); 
+            });
+            $("#slide_toggle").click(function(){
+               $(".slide").slideToggle(3000); 
+            });
+        });
+    </script>
+    
+    
+</body>
+
+
+</html>
